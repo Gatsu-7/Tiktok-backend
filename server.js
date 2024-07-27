@@ -1,12 +1,14 @@
 import express from "express";
 import mongoose from "mongoose";
 import data from "./data.js";
+import Cors from "cors";
 import Videos from "./dbModel.js";
 const app = express();
 const connection_url = `mongodb+srv://satysat03:ltcEqvv26yV4h2vY@cluster0.tlu5xeq.mongodb.net/tiktokdb?retryWrites=true&w=majority&appName=Cluster0`;
 const port = process.env.port || 3001;
 
 app.use(express.json());
+app.use(Cors());
 
 mongoose
   .connect(connection_url, {})
